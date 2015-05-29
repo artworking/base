@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Functions
+   ========================================================================== */
+
+/// Strips the unit from the given value and returns the value.
+///
+/// @param {Number} $value
+/// @return {Number}
+/// @author Sam Hastings
+/// @example scss
+///   strip-unit(42px)
+///   // 42
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+
+
+/// Returns an em unit based on the pixel value and context.
+///
+/// @param {Number} $px
+/// @param {Number} $context
+/// @return {Number}
+/// @example scss
+///   em(12px)
+///   // 0.75em
+///   em(15px, 12px)
+///   // 1.5em
+@function em($px, $context: $base-font-size) {
+    @return #{strip-unit($px / strip-unit($context))}em;
+}
+
+/// Returns an em unit based on the pixel value and context.
+///
+/// @param {Number} $px
+/// @param {Number} $context
+/// @return {Number}
+/// @example scss
+///   rem(12px)
+///   // 0.75rem
+///   rem(15px, 12px)
+///   // 1.5rem
+@function rem($px, $context: $base-font-size) {
+    @return #{strip-unit($px / strip-unit($context))}rem;
+}

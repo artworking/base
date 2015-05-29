@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// LINKS
+// -----------------------------------------------------------------------------
+
+a {
+    text-decoration: underline;
+
+    &:link {
+        color: $color--link;
+    }
+
+    &:visited {
+        color: lighten($color--link, 15%);
+    }
+
+    &:hover {
+        color: $color--link;
+        text-decoration: none;
+    }
+
+    &:active,
+    &:focus {
+        color: $color--link;
+    }
+}
+
+
+
+/**
+ * A subtle link inherits its color and text decoration (usually none) from its
+ * parent.
+ */
+.subtle-link {
+    text-decoration: inherit;
+    color: inherit;
+}

@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// IMAGES
+// -----------------------------------------------------------------------------
+
+/**
+ * Images should always be constrained to the size of their container in
+ * responsive layouts.
+ *
+ * 1. Google Maps embeds should have the class `map` applied, which will prevent
+ *    the layout breaking by enforcing the global `max-width` setting.
+ */
+img {
+    max-width: 100%;
+
+    .map & {
+        max-width: none; /* [1] */
+    }
+}

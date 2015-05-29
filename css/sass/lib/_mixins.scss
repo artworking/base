@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/**
+ * Fonts
+ */
+@mixin rem($property, $values) {
+    $px:  ();
+    $rem: ();
+
+    @each $value in $values {
+        @if $value == 0 or $value == auto {
+            $px:  append($px, $value);
+            $rem: append($rem, $value);
+        } @else {
+            $px:  append($px, $value);
+            $rem: append($rem, rem(strip-unit($value)));
+        }
+    }
+
+    #{$property}: $px;
+    #{$property}: $rem;
+}
+
+@mixin rem-font-size($font-size) {
+    @include rem(font-size, $font-size);
+}
+
+
+
+/**
+ * Vertically aligns an element without needing to know or fix its height.
+ */
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+/**
+ * Media query mixin
+ *
+ * Media queries should be defined as Sass lists using the following structure:
+ *
+     $breakpoints: (
+         'mobile' '(max-width: 480px)',
+         'tablet' '(min-width: 481px) and (max-width: 768px)'
+     );
+ *
+ */
+@mixin media-query($queries...) {
+    @each $query in $queries {
+        @each $breakpoint in $breakpoints {
+            $name:        nth($breakpoint, 1);
+            $declaration: nth($breakpoint, 2);
+
+            @if $query == $name and $declaration {
+                @media only screen and #{$declaration} {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
+ * Retina image mixin
+ */
+@mixin retina-background($filename, $extension: 'png', $dimensions: true) {
+
+    @if not mixin-exists(image-width) {
+        @error "Compass does not appear to be installed.";
+    }
+
+    $filename-1x: $filename + '@1x.' + $extension;
+    $filename-2x: $filename + '@2x.' + $extension;
+
+    $width:  image-width($filename-1x);
+    $height: image-height($filename-1x);
+
+    @if $dimensions {
+        width: $width;
+        height: $height;
+    }
+
+    background-image: image-url($filename-1x);
+
+    @include media-query('retina') {
+        background-image: image-url($filename-2x);
+        @include background-size($width $height);
+    }
+}
+
+
+
+/**
+ * Allows the same styles to be applied to multiple selectors without
+ * comma-separating them. Useful for proprietary/non-widely-supported selectors
+ * which can't be comma-separated.
+ */
+@mixin multiple-selectors($selectors...) {
+    @each $selector in $selectors {
+        #{$selector} {
+            @content;
+        }
+    }
+}
+
+
+
+/**
+ * Placeholder styling
+ */
+@mixin placeholder-style() {
+    @include multiple-selectors('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder') {
+        @content;
+    }
+}
+
+
+
+/**
+ * Text selection highlight
+ */
+@mixin highlight-style() {
+    @include multiple-selectors('::selection', '::-moz-selection') {
+        @content;
+    }
+}
+
+
+
+/**
+ * Full-page overlay
+ */
+@mixin overlay($opacity: 0.8, $color: #000) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color, $opacity);
+}
