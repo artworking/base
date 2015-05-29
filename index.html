@@ -9,11 +9,12 @@
     </head>
     <body>
 
-        <!-- jQuery is a beast of a library so always try to use Zepto
-             (http://zeptojs.com/) instead, unless a specific feature is not
-             supported. The API is largely the same as jQuery’s so often it can
-             be dropped in as a direct replacement. -->
-        <script src="/js/vendor/zepto-1.1.6.min.js"></script>
+        <!--[if lte IE 8]>
+            <script src="/js/vendor/jquery-1.11.3.min.js"></script>
+        <![endif]-->
+        <!--[if !IE]> -->
+            <script src="/js/vendor/jquery-2.1.4.min.js"></script>
+        <!-- <![endif]-->
         <script src="/js/main.js"></script>
     </body>
 </html>
