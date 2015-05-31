@@ -5,6 +5,25 @@
 // Type
 $base-font-size: 16px;
 $base-line-height: 22px;
+$font-sizes: (
+
+    // non-standard large sizes
+    giga:    80px,
+    mega:    60px,
+    kilo:    48px,
+
+    // standard sizes
+    alpha:   36px,
+    beta:    30px,
+    gamma:   21px,
+    delta:   20px,
+    epsilon: 18px,
+    zeta:    15px,
+
+    // non-standard small sizes
+    milli:   11px,
+
+);
 
 
 
