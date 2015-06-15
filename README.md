@@ -4,15 +4,11 @@ This is a starting point for all frontend builds at [Artworking](http://artworki
 
 ## Downloading
 
-For now, download a copy of the [latest version](https://github.com/artworking/base/archive/master.zip) – in the future, we’ll be creating [releases](https://github.com/artworking/base/releases) instead.
-
-## Directory structure
-
-Please read through the `README.md` file in each directory to get an idea of what’s expected there. As a general rule, `lib/` and `generic/` directories (and their files) should remain unchanged – see “updating base files” below.
+For now, just grab a copy of the [latest version (zip)](https://github.com/artworking/base/archive/master.zip) – in the future, we’ll be creating [releases](https://github.com/artworking/base/releases) instead.
 
 ## Updating base files
 
-Spotted a bug? Want to add a new feature? Don’t just fix it on the project you’re working on.
+Spotted a bug? Want to add a new feature? Don’t fix it just on the project you’re working on.
 
 1. [Raise an issue.](https://github.com/artworking/base/issues/new)
 2. Clone a copy of this repository, fix and test thoroughly.
@@ -20,6 +16,6 @@ Spotted a bug? Want to add a new feature? Don’t just fix it on the project you
 
 ## Coding guidelines
 
-Please see the [coding guidelines introduction](https://github.com/artworking/base/blob/master/doc/html.md).
+Please start at the [coding guidelines introduction](https://github.com/artworking/base/blob/master/doc/html.md).
 
 Please do not commit this readme file or the `doc/` directory to your projects.

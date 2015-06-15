@@ -1,5 +1,9 @@
 # CSS
 
+## Sass directory structure
+
+Please read through the `README.md` file in each directory under `css/sass/` to get an idea of what’s expected there. As a general rule, `lib/` and `generic/` directories (and their files) should remain unchanged (see “updating base files” on the [main project README](https://github.com/artworking/base/blob/master/README.md)).
+
 ## Linting
 
 Please run [SCSS Lint](https://github.com/brigade/scss-lint) regularly to check for inconsistent CSS. The linter output should be error-free before committing – see “hacks” below for when this isn’t possible.
