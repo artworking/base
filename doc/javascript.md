@@ -1,5 +1,7 @@
 # JavaScript
 
+## jQuery
+
 Currently our standard JavaScript library is jQuery. Using conditional comments in our HTML, we use the 2.x branch on more modern browsers with a fallback to 1.x for IE8 and below. 
 
 ```html
@@ -11,7 +13,9 @@ Currently our standard JavaScript library is jQuery. Using conditional comments 
 <!-- <![endif]-->
 ```
 
-## Selectors
+Don’t include jQuery in a project unless you actually need it.
+
+### Selectors
 
 Never attach behaviour to classes which are also used for styling. For clarity, prefix your behavioural classes with `js-`.
 
@@ -77,7 +81,7 @@ popupButtons.on("click", handler);
 doSomethingElse(popupButtons);
 ```
 
-## Manipulation
+### Manipulation
 
 Many JavaScript animations can be achieved using CSS animations or transitions instead. Delegate the bulk of the work to CSS wherever possible.
 

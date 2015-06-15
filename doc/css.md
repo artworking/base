@@ -1,5 +1,47 @@
 # CSS
 
+## Linting
+
+Please run [SCSS Lint](https://github.com/brigade/scss-lint) regularly to check for inconsistent CSS. The linter output should be error-free before committing – see “hacks” below for when this isn’t possible.
+
+You’ll notice by default the linter throws `EmptyRule` warnings when run on a freshly downloaded project base – this is known behaviour and intentional. Either fill in the gaps or remove the empty declarations, whatever the project dictates.
+
+### Installing the Linter
+
+```bash
+sudo gem install scss_lint
+```
+
+### Running the Linter
+
+```bash
+cd /path/to/your/project/css/sass
+scss-lint
+```
+
+### Linter errors
+
+If you’re using a version of SCSS Lint older than 0.39.0, please run the following commands to remove it and install the newer version (note the name of the package has changed hence the need to remove and install from scratch):
+
+```bash
+sudo gem uninstall scss-lint
+sudo gem install scss_lint
+```
+
+To find out which version you’re running:
+
+```bash
+scss-lint -v
+```
+
+## Reset or normalize?
+
+In all honesty we don’t mind which is used, which is why both can be found in the `vendor/` directory. Make sure only one is imported, naturally.
+
+## Grids
+
+Our standard grid system is [CSS Wizardry grids](https://github.com/csswizardry/csswizardry-grids) and is bundled with the project base. Please ensure it is configured correctly and only outputs the grid declarations that are needed for the website.
+
 ## Naming conventions
 
 ### Class names
@@ -172,6 +214,12 @@ Overriding previous styles is often needed. Be careful what you override, howeve
 
 In the above example, all `background-*` properties set originally will be undone, which is probably not desirable behaviour.
 
+## Hacks
+
+We’ve all been there: it’s 10 to 5 on a Friday afternoon and the _only_ way you can get that button’s link colour to behave is by sticking `!important` at the end of the CSS declaration. It’s quick and dirty and will do for now.
+
+Put this declaration on its own in `_hacks.scss` (which is ignored by the linter) and refactor it as soon as possible.
+
 ## CSS formatting
 
 ```scss
@@ -259,11 +307,19 @@ In the above example, all `background-*` properties set originally will be undon
         /* styles */
     }
 }
+
+
+
+/**
+ * Mixin declaration
+ */
+@mixin mixin-name($foo, $bar: false) {
+	// rules
+}
 ```
 
 ## Property order
 
-CSS properties must appear in the order defined in .scss-lint.yml. This ordering standard groups related properties.
+CSS properties must appear in the order defined in `.scss-lint.yml`. This ordering standard groups related properties.
 
-Any missing properties (eg browser specific or otherwise rarely used properties) should go at the end of the style declaration in no particular order, and should probably be annotated with a brief explanation.
-
+Any missing properties (eg browser specific or otherwise rarely used properties) should go at the end of the style declaration in no particular order, and should probably be annotated with a brief explanation. It may also be worth [opening an issue](https://github.com/artworking/base/issues/new) so the property can be added into `.scss-lint.yml` for future projects.
