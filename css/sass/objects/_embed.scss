@@ -9,7 +9,7 @@
 /// @return {Number}
 /// @author Sam Hastings
 @function ratio-to-percentage($x, $y) {
-    @return ( $y / $x ) * 100%;
+    @return ($y / $x) * 100%;
 }
 
 
