@@ -6,7 +6,6 @@
 // choose one of the below to suit your preferred workflow
 //@import 'vendor/reset';
 //@import 'vendor/normalize';
-
 @import 'vendor/csswizardry-grids';
 
 @import 'generic/clearfix';
@@ -19,8 +18,7 @@
 @import 'base/links';
 @import 'base/type';
 
-// add or object imports below this line
-
+// add your object imports below this line
 @import 'objects/buttons';
 @import 'objects/forms';
 @import 'objects/menu';
