@@ -1,1 +1,4 @@
 .sass-cache
+# Uncomment the below lines on live projects
+#README.md
+#doc/*

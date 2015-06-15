@@ -1,6 +1,6 @@
 # Artworking project base
 
-This is a starting point for all frontend builds at [Artworking](http://artworking.uk/).
+This is a starting point for all frontend builds at [Artworking](http://artworking.uk/). This repository serves to standardise and document our frontend development process somewhat. We figured other developers may get a kick out of seeing how we do things and decided to make it public.
 
 ## Downloading
 

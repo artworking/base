@@ -1,5 +1,15 @@
 # JavaScript
 
+## Native JavaScript
+
+Avoid jQuery unless it’s really necessary. Changing a single CSS property on an element with an `id` is as simple as:
+
+```javascript
+document.getElementById("foo").style.display = "none";
+```
+
+One day it will be nice to switch to [Zepto](http://zeptojs.com/) when we can safely stop supporting IE9 and below.
+
 ## jQuery
 
 Currently our standard JavaScript library is jQuery. Using conditional comments in our HTML, we use the 2.x branch on more modern browsers with a fallback to 1.x for IE8 and below. 

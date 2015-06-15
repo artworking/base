@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// EMBED
+// -----------------------------------------------------------------------------
+
+/// Returns a percentage for the ratio x:y.
+///
+/// @param {Number} $x
+/// @param {Number} $y
+/// @return {Number}
+/// @author Sam Hastings
+@function ratio-to-percentage($x, $y) {
+    @return ( $y / $x ) * 100%;
+}
+
+
+
+/**
+ * Creates a containing element with the correct aspect ratio to hold a video
+ * which works in a fluid layout. By default this expects a video and therefore
+ * has `padding-top` set to 56.25% which will give a 16:9 ratio box.
+ *
+ * Usage
+ *
+ * <div class="embed">
+ *     <iframe class="embed__content" src="http://www.example.com/video/"></iframe>
+ * </div>
+ */
+.embed {
+    position: relative;
+    padding-top: ratio-to-percentage(16, 9);
+}
+
+/**
+ * In case you ever need a 4:3 container.
+ */
+.embed--4x3 {
+    padding-top: ratio-to-percentage(4, 3);
+}
+
+    .embed__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
