@@ -16,7 +16,7 @@ Spotted a bug? Want to add a new feature? Don’t fix it just on the project you
 
 ## Coding guidelines
 
-Please start at the [coding guidelines introduction](https://github.com/artworking/base/blob/master/doc/html.md).
+Please start at the [coding guidelines introduction](https://github.com/artworking/base/blob/master/doc/intro.md).
 
 Please do not commit this readme file or the `doc/` directory to your projects.
 
