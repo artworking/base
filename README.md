@@ -52,7 +52,7 @@ In all honesty we don’t mind which is used, which is why both can be found in 
 
 ## Hacks
 
-We‘ve all been there: it’s 10 to 5 on a Friday afternoon and the _only_ way you can get that button’s link colour to behave is by sticking `!important` at the end of the CSS declaration. It’s quick and dirty and will do for now.
+We’ve all been there: it’s 10 to 5 on a Friday afternoon and the _only_ way you can get that button’s link colour to behave is by sticking `!important` at the end of the CSS declaration. It’s quick and dirty and will do for now.
 
 Put this declaration on its own in `_hacks.scss` (which is ignored by the linter) and refactor it as soon as possible.
 
