@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// DEBUG
+//
+// Checks HTML for common errors and highlights them – only import this file in
+// development/testing environments.
+// -----------------------------------------------------------------------------
+
+$color--debug-warn:  #ff0;
+$color--debug-error: #f00;
+
+@mixin debug-warn() {
+    outline: 3px dotted $color--debug-warn;
+}
+
+@mixin debug-error() {
+    outline: 3px dotted $color--debug-error;
+}
+
+
+
+/**
+ * Check for links without a (valid) `href` attribute. Are you sure you didn’t
+ * mean to use a `button` instead?
+ */
+a[href='#'],
+a:not([href]):not([name]) {
+    @include debug-warn();
+}
+
+
+
+/**
+ * Check for valid grid markup.
+ */
+:not(.grid) > .grid__item,
+.grid > :not(.grid__item) {
+    @include debug-error();
+}
+
+
+
+/**
+ * Check for empty elements – may indicate a problem.
+ */
+:empty {
+    @include debug-warn();
+}
+
+
+
+/**
+ * Check for valid `alt` attribute on images. Empty attribute: fine but worth
+ * checking; no attribute: needs fixing.
+ */
+img:not([alt]) {
+    @include debug-error();
+}
+
+img[alt=''] {
+    @include debug-warn();
+}
+
+
+
+/**
+ * Check the `scope` attribute is applied to all table headings.
+ */
+th:not([scope]) {
+    @include debug-warn();
+}
+
+
+
+/**
+ * Check for presence of `thead`/`tbody` elements.
+ */
+table > tr {
+    @include debug-warn();
+}
+
+
+
+/**
+ * Check that the `tfoot` comes *before* the `tbody`.
+ *
+ * See: http://www.w3.org/TR/html401/struct/tables.html#h-11.2.3
+ */
+tbody + tfoot {
+    @include debug-warn();
+}
+
+
+
+/**
+ * `<input type="submit">` isn’t ideal – please use a `button` element instead
+ * for easier styling (such as pseudo element support).
+ */
+input[type='submit'] {
+    @include debug-error();
+}
+
+
+
+/**
+ * Avoid inline styles.
+ */
+[style] {
+    @include debug-error();
+}

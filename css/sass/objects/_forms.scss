@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// FORMS
+// -----------------------------------------------------------------------------
+
+/**
+ * Default input style.
+ */
+.input {
+
+}
+
+
+
+/**
+ * Default label style.
+ *
+ * 1. `cursor` property recommended for accessibility reasons.
+ */
+.label {
+    cursor: pointer; /* [1] */
+}

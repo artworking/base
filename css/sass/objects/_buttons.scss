@@ -1,0 +1,61 @@
+// -----------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------
+
+/**
+ * Standard button.
+ *
+ * 1. Remove the default border from `<button>` elements.
+ */
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 0; /* [1] */
+}
+
+
+
+/**
+ * Full-width button.
+ *
+ * 1. 100% width required to make `<button>` elements fill container.
+ */
+.button--full-width {
+    display: block;
+    width: 100%; /* [1] */
+    text-align: center;
+}
+
+
+
+/**
+ * Button themes.
+ */
+.button--primary {
+
+}
+
+.button--secondary {
+
+}
+
+.button--danger {
+
+}
+
+
+
+/**
+ * Button sizes.
+ */
+.button--large {
+
+}
+
+.button--medium {
+
+}
+
+.button--small {
+
+}

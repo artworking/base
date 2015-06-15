@@ -2,11 +2,13 @@
 // NAVIGATION
 // -----------------------------------------------------------------------------
 
+/**
+ * Generic horizontal navigation.
+ */
 .nav {
-    list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 1;
+    list-style: none;
 
     > li {
         display: inline-block;
@@ -24,16 +26,7 @@
 
 
 /**
- * Inline menu
- */
-.nav--inline {
-    display: inline-block;
-}
-
-
-
-/**
- * Stacked menu
+ * Stacked menu – items stack horizontally.
  */
 .nav--stacked {
 
@@ -45,7 +38,7 @@
 
 
 /**
- * Stretch menu (all items expand to fill container)
+ * Stretch menu – items expand to fill container.
  */
 .nav--stretch {
     display: table;

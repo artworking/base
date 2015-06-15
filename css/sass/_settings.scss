@@ -28,13 +28,14 @@ $font-sizes: (
 
 
 // Colors
-$color--example: #bada55;
-
-$color--link: $color--example;
+$color--body: #222;
+$color--link: #06c;
 
 
 
 // Layout
+$wrapper-width: 1200px;
+$wrapper-gutter: 20px;
 $gutter: 20px;
 $breakpoints: (
 

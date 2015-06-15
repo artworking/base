@@ -12,21 +12,21 @@
 ///   // padding: 1rem 0.75rem;
 @mixin rem($property, $values) {
 
-	$px:  ();
-	$rem: ();
+    $px:  ();
+    $rem: ();
 
-	@each $value in $values {
-		@if $value == 0 or $value == auto {
-			$px:  append($px,  $value);
-			$rem: append($rem, $value);
-		} @else {
-			$px:  append($px,  $value);
-			$rem: append($rem, rem(strip-unit($value)));
-		}
-	}
+    @each $value in $values {
+        @if $value == 0 or $value == auto {
+            $px:  append($px, $value);
+            $rem: append($rem, $value);
+        } @else {
+            $px:  append($px, $value);
+            $rem: append($rem, rem(strip-unit($value)));
+        }
+    }
 
-	#{$property}: $px;
-	#{$property}: $rem;
+    #{$property}: $px;
+    #{$property}: $rem;
 
 }
 
@@ -34,7 +34,7 @@
 /// @author Sam Hastings
 /// @param {Number} $font-size - the px value to convert
 @mixin rem-font-size($font-size) {
-	@include rem(font-size, $font-size);
+    @include rem(font-size, $font-size);
 }
 
 

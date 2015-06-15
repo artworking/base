@@ -1,20 +1,21 @@
 // -----------------------------------------------------------------------------
 // TYPE
+// scss-lint:disable SingleLinePerSelector
 // -----------------------------------------------------------------------------
 
 /**
- * Base
+ * Base font size & color.
  */
 html {
     font-size: ($base-font-size / 16px) * 100%;
     line-height: $base-line-height / $base-font-size;
-    color: #222;
+    color: $color--body;
 }
 
 
 
 /**
- * Families
+ * Families – one mixin per typeface.
  *
  * For each font mixin defined here, make sure each property is negated (set
  * to its default value, usually `inherit`) in all other font mixins.
@@ -91,17 +92,18 @@ small, .milli { @include font-size(milli); }
 
 
 /**
- * Opt-in typography container
+ * Opt-in typography container – apply styles specific to longform content in
+ * this container.
  */
 .article {
 
     ul {
-        list-style: disc;
         margin: 0 0 1em;
+        list-style: disc;
     }
 
     ol {
-        list-style: decimal;
         margin: 0 0 1em;
+        list-style: decimal;
     }
 }
