@@ -8,7 +8,7 @@ For now, download a copy of the [latest version](https://github.com/artworking/b
 
 Please run [SCSS Lint](https://github.com/brigade/scss-lint) regularly to check for inconsistent CSS. The linter output should be error-free before committing – see “hacks” below for when this isn’t possible.
 
-You’ll notice by default the linter throws empty rules warnings when run on a freshly downloaded project base – this is known behaviour and intentional. Either fill in the gaps or remove the empty declarations, whatever the project dictates.
+You’ll notice by default the linter throws `EmptyRule` warnings when run on a freshly downloaded project base – this is known behaviour and intentional. Either fill in the gaps or remove the empty declarations, whatever the project dictates.
 
 ### Installing the Linter
 
