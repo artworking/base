@@ -77,7 +77,7 @@
 @mixin retina-background($filename, $extension: 'png', $dimensions: true) {
 
     @if not mixin-exists(image-width) {
-        @error "Compass does not appear to be installed.";
+        @error "The `retina-background` mixin requires Compass.";
     }
 
     $filename-1x: $filename + '@1x.' + $extension;

@@ -20,11 +20,13 @@
 /// @example scss
 ///   em(12px)
 ///   // 0.75em
-///   em(15px, 12px)
+///   em(18px, 12px)
 ///   // 1.5em
 @function em($px, $context: $base-font-size) {
     @return #{strip-unit($px / strip-unit($context))}em;
 }
+
+
 
 /// Returns an em unit based on the pixel value and context.
 ///
@@ -34,7 +36,7 @@
 /// @example scss
 ///   rem(12px)
 ///   // 0.75rem
-///   rem(15px, 12px)
+///   rem(18px, 12px)
 ///   // 1.5rem
 @function rem($px, $context: $base-font-size) {
     @return #{strip-unit($px / strip-unit($context))}rem;
