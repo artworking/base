@@ -19,3 +19,9 @@ Spotted a bug? Want to add a new feature? Don’t fix it just on the project you
 Please start at the [coding guidelines introduction](https://github.com/artworking/base/blob/master/doc/html.md).
 
 Please do not commit this readme file or the `doc/` directory to your projects.
+
+## Changelog
+
+### 2015-06-15
+
+- Removed Modernizr by default (it’s still in `js/vendor/` if needed) and replaced it with [HTML5 Shiv](https://github.com/afarkas/html5shiv) and a small inline script to change the `no-js` class on the `html` element to `js` (if you decide to use Modernizr, remove these other two bits of code).
