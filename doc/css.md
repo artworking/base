@@ -261,9 +261,9 @@ Put this declaration on its own in `_hacks.scss` (which is ignored by the linter
  * Similar grouped rulesets can be condensed into single lines to
  * aid readability.
  */
-.icon--facebook { background-image: url(facebook.png); }
-.icon--twitter  { background-image: url(twitter.png);  }
-.icon--linkedin { background-image: url(linkedin.png); }
+.icon--facebook { background-image: url('facebook.png'); }
+.icon--twitter  { background-image: url('twitter.png');  }
+.icon--linkedin { background-image: url('linkedin.png'); }
 
 
 

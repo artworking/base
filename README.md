@@ -45,4 +45,4 @@ Language-specific coding guidelines can be found in the `doc/` directory, or bel
 
 ## Documentation
 
-Please do not commit this or the `doc/` directory to your projects.
+Please do not commit this readme file or the `doc/` directory to your projects.
