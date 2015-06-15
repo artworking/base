@@ -34,6 +34,10 @@ To find out which version you’re running:
 scss-lint -v
 ```
 
+## Vendor prefixes
+
+Please avoid vendor prefixes – Autoprefixer adds them for you.
+
 ## Reset or normalize?
 
 In all honesty we don’t mind which is used, which is why both can be found in the `vendor/` directory. Make sure only one is imported, naturally.
