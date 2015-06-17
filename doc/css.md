@@ -80,147 +80,7 @@ Custom mixins and functions should follow the official Sass style of hyphen-sepa
 
 ## Reusability
 
-CSS should always be written with reusability in mind. Here are the golden rules for writing reusable CSS:
-
-### 1. Never use IDs in selectors
-
-IDs by definition cannot be reused, and their high specificity causes too many issues. Always use a class selector instead.
-
-### 2. Use nested selectors only when completely necessary
-
-Remember that nesting can tightly couple styling to a specific HTML structure, which is usually undesirable. Always write selectors which are as portable as possible, ie those which can be applied to any element on the page.
-
-    .sidebar .menu h2 {
-        font-size: 2rem;
-        color: #fc0;
-    }
-
-The above selector prevents reuse of the heading’s styles elsewhere. Refactor as follows:
-
-    .widget-title {
-        font-size: 2rem;
-        color: #fc0;
-    }
-
-There are circumstances where nesting can be used effectively.
-
-    .avatar {
-        border: 2px solid #333;
-        border-radius: 50%;
-    }
-
-    .header--dark .avatar {
-        border-color: #fff;
-    }
-
-In the above example, a default `.avatar` ruleset is defined and then additional styles are applied when it appears in a certain parent element.
-
-### 3. Selectors should rarely be qualified with tag names
-
-Consider:
-
-```css
-h2.heading {
-    /* styles */
-}
-```
-
-The above styles can now only be applied to `h2` tags. This isn’t ideal when we want to use the same styles on a different tag – maybe an `h3`, for example. Omit the tag from this kind of selector as it brings no benefit.
-
-Sometimes tag qualification is necessary.
-
-```css
-.button {
-    display: block;
-    padding: 6px 12px;
-}
-
-button.button {
-    box-sizing: border-box;
-    width: 100%;
-}
-```
-
-In the above example, simply setting a `button` element to `display: block` won’t make it fill its container, hence the need for the additional instructions just for `button` elements.
-
-### 4. Try and avoid undoing styles
-
-If you find yourself undoing (not overriding) styles, it’s possible that the original styles were set too early and were too generic. Consider refactoring the undone styles into a separate ruleset.
-
-```css
-.widget {
-    float: left;
-    clear: left;
-    margin-left: 25px;
-}
-
-.widget--full-width {
-    float: none;
-    clear: none;
-    margin-left: 0;
-}
-```
-
-The above should be refactored as follows:
-
-```css
-.widget--floated {
-    float: left;
-    clear: left;
-    margin-left: 25px;
-}
-```
-
-Now the additional `.widget--full-width` ruleset is not needed, and the floated styles can still be applied as and when needed.
-
-### 5. Try and keep layout rules separate
-
-```css
-.logo {
-    position: absolute;
-    top: 25px;
-    left: 50px;
-    width: 250px;
-    height: 75px;
-    background-image: url('../images/logo.png');
-}
-```
-
-Introducing a logo elsewhere on the site will result in odd behaviour unless we undo a bunch of positioning rules first.
-
-Instead, add two classes to the element and style them separately.
-
-```css
-.logo {
-    width: 250px;
-    height: 75px;
-    background-image: url('../images/logo.png');
-}
-
-.header__logo {
-    position: absolute;
-    top: 25px;
-    left: 50px;
-}
-```
-
-### 6. Override styles sensibly
-
-Overriding previous styles is often needed. Be careful what you override, however – for example, it’s wise to avoid shorthand styles when overriding.
-
-```css
-.header {
-    background-color: #eee;
-    background-image: url(logo.png);
-    background-position: 25px 50%;
-}
-
-.header--dark {
-    background: #000;
-}
-```
-
-In the above example, all `background-*` properties set originally will be undone, which is probably not desirable behaviour.
+CSS should always be written with reusability in mind. Please read the [golden rules for writing reusable CSS](http://samhastings.com/guides/reusable-css/).
 
 ## Hacks
 
@@ -307,7 +167,7 @@ Put this declaration on its own in `_hacks.scss` (which is ignored by the linter
         /* styles */
     }
 
-    &:pseudo-element {
+    &::pseudo-element {
         /* styles */
     }
 
@@ -331,3 +191,7 @@ Put this declaration on its own in `_hacks.scss` (which is ignored by the linter
 CSS properties must appear in the order defined in `.scss-lint.yml`. This ordering standard groups related properties.
 
 Any missing properties (eg browser specific or otherwise rarely used properties) should go at the end of the style declaration in no particular order, and should probably be annotated with a brief explanation. It may also be worth [opening an issue](https://github.com/artworking/base/issues/new) so the property can be added into `.scss-lint.yml` for future projects.
+
+## Shorthand properties
+
+Avoid the `background` shorthand property which can appear messy. Use the `background-` properties individually instead.

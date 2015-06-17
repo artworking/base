@@ -11,6 +11,7 @@
  */
 img {
     max-width: 100%;
+    user-select: none;
 
     .google-map & {
         max-width: none; /* [1] */
