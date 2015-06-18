@@ -1,5 +1,14 @@
 // -----------------------------------------------------------------------------
-// EMBED
+// ASPECT RATIO
+//
+// Maintains the aspect ratio of a box. Primary use case is for enabling fluid
+// media embeds, eg from YouTube (use `.ratio--video` or `.ratio--16x9`).
+//
+// Usage
+//
+//   <div class="ratio  ratio--video">
+//       <iframe class="ratio__content" src="..."></iframe>
+//   </div>
 // -----------------------------------------------------------------------------
 
 /// Returns a percentage for the ratio x:y.
@@ -15,29 +24,26 @@
 
 
 /**
- * Creates a containing element with the correct aspect ratio to hold a video
- * which works in a fluid layout. By default this expects a video and therefore
- * has `padding-top` set to 56.25% which will give a 16:9 ratio box.
- *
- * Usage
- *
- * <div class="embed">
- *     <iframe class="embed__content" src="..."></iframe>
- * </div>
+ * Default aspect ratio is 1:1 (square).
  */
-.embed {
+.ratio {
     position: relative;
-    padding-top: ratio-to-percentage(16, 9);
+    padding-top: ratio-to-percentage(1, 1);
 }
 
 /**
- * In case you ever need a 4:3 container.
+ * Other aspect ratios.
  */
-.embed--4x3 {
+.ratio--16x9,
+.radio--video {
+    padding-top: ratio-to-percentage(16, 9);
+}
+
+.ratio--4x3 {
     padding-top: ratio-to-percentage(4, 3);
 }
 
-    .embed__content {
+    .ratio__content {
         position: absolute;
         top: 0;
         left: 0;

@@ -7,6 +7,7 @@
  *
  * 1. Remove the default border from `<button>` elements.
  * 2. Ensure `a:*` pseudo classes don’t override button styles.
+ * 3. Hack to remove extra height from `<button>` elements in Firefox.
  */
 .button {
     display: inline-block;
@@ -21,6 +22,11 @@
     &:focus {
         text-decoration: none; /* [2] */
         background-color: $color--link;
+    }
+
+    &::-moz-focus-inner {
+        border: 0; /* [3] */
+        padding: 0; /* [3] */
     }
 }
 
