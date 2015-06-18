@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// STRETCH
+//
+// For when you need elements to wrap to the left and right of a row, while
+// maintaining vertical alignment.
+//
+// Demo: http://codepen.io/samhastings/pen/zxvQrz
+// -----------------------------------------------------------------------------
+
+.stretch {
+    display: table;
+    table-layout: fixed;
+}
+
+    .stretch__cell {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+
+        &:first-child { text-align: left; }
+        &:last-child  { text-align: right; }
+
+        .stretch--top      & { vertical-align: top; }
+        .stretch--bottom   & { vertical-align: bottom; }
+        .stretch--baseline & { vertical-align: baseline; }
+    }
