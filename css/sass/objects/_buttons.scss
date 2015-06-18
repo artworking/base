@@ -3,16 +3,25 @@
 // -----------------------------------------------------------------------------
 
 /**
- * Standard button.
+ * Settings – override in `_settings.scss`
+ */
+$disabled-button-bg: #eee;
+$disabled-button-fg: #999;
+
+
+
+/**
+ * Standard button
  *
- * 1. Remove the default border from `<button>` elements.
+ * 1. Remove default styles from `<button>` elements.
  * 2. Ensure `a:*` pseudo classes don’t override button styles.
- * 3. Hack to remove extra height from `<button>` elements in Firefox.
+ * 3. Remove extra height from `<button>` elements in Firefox.
  */
 .button {
     display: inline-block;
     box-sizing: border-box;
     border: 0; /* [1] */
+    font: inherit; /* [1] */
 
     &,
     &:link,
@@ -21,7 +30,7 @@
     &:active,
     &:focus {
         text-decoration: none; /* [2] */
-        background-color: $color--link;
+        background-color: $color--link; /* [2] */
     }
 
     &::-moz-focus-inner {
@@ -33,20 +42,31 @@
 
 
 /**
- * Full-width button.
+ * Full-width button
  *
  * 1. 100% width required to make `<button>` elements fill container.
  */
 .button--full-width {
     display: block;
     width: 100%; /* [1] */
-    text-align: center;
 }
 
 
 
 /**
- * Button themes.
+ * Disabled button
+ */
+.button--disabled,
+.button:disabled {
+    color: $disabled-button-fg;
+    background-color: $disabled-button-bg;
+    pointer-events: none;
+}
+
+
+
+/**
+ * Button themes
  */
 .button--primary {
 
@@ -63,7 +83,7 @@
 
 
 /**
- * Button sizes.
+ * Button sizes
  */
 .button--large {
 
