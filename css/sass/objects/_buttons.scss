@@ -5,8 +5,8 @@
 /**
  * Settings – override in `_settings.scss`
  */
-$disabled-button-bg: #eee;
-$disabled-button-fg: #999;
+$disabled-button-bg: #eee !default;
+$disabled-button-fg: #999 !default;
 
 
 
