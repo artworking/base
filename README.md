@@ -22,6 +22,11 @@ Please do not commit this readme file or the `doc/` directory to your projects.
 
 ## Changelog
 
+### 2015-06-18
+
+- Added the [stretch object](https://github.com/artworking/base/blob/master/css/sass/generic/_stretch.scss).
+- Added the [ratio object](https://github.com/artworking/base/blob/master/css/sass/generic/_ratio.scss).
+
 ### 2015-06-15
 
 - Removed Modernizr by default (it’s still in `js/vendor/` if needed) and replaced it with [HTML5 Shiv](https://github.com/afarkas/html5shiv) and a small inline script to change the `no-js` class on the `html` element to `js` (if you decide to use Modernizr, remove these other two bits of code).
