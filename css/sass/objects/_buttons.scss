@@ -21,7 +21,10 @@ $disabled-button-fg: #999 !default;
     display: inline-block;
     box-sizing: border-box;
     border: 0; /* [1] */
-    font: inherit; /* [1] */
+    padding: 0; /* [1] */
+    font-family: inherit; /* [1] */
+    line-height: 1; /* [1] */
+    cursor: pointer; /* [1] */
 
     &,
     &:link,
@@ -30,7 +33,6 @@ $disabled-button-fg: #999 !default;
     &:active,
     &:focus {
         text-decoration: none; /* [2] */
-        background-color: $color--link; /* [2] */
     }
 
     &::-moz-focus-inner {

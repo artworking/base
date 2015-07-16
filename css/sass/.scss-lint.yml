@@ -2,6 +2,8 @@ exclude:
     - 'vendor/**'
     - '_hacks.scss'
 linters:
+    ColorVariable:
+        enabled: false
     Comment:
         enabled: false
     DeclarationOrder:
