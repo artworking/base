@@ -24,6 +24,11 @@
 - [The media object saves hundreds of lines of code](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
 - [Vertical align anything with just 3 lines of CSS](http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/)
 
+### Workflow
+
+- [Responsive Deliverables](http://daverupert.com/2013/04/responsive-deliverables/)
+- [What a CSS Code Review Might Look Like](https://css-tricks.com/what-a-css-code-review-might-look-like/)
+
 ## Git
 
 - [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)

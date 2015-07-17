@@ -7,3 +7,5 @@ The `ui/` directory should contain concrete styles for setting out the major UI 
 - Sidebar
 - Blog post
 - Products list
+
+It’s important that the `ui/` components are loaded _after_ the `objects/` directory.
