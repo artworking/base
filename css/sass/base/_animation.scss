@@ -1,9 +1,0 @@
-// -----------------------------------------------------------------------------
-// ANIMATION
-// -----------------------------------------------------------------------------
-
-@mixin default-transition($properties: all) {
-    transition-property: $properties;
-    transition-timing-function: $default-transition-timing-function;
-    transition-duration: $default-transition-duration;
-}
