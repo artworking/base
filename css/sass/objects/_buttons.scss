@@ -67,12 +67,9 @@ $disabled-button-fg: #999 !default;
 
 
 /**
- * Button themes
+ * Button themes (`.button--primary` should be the default button style and
+ * lives in the default `.button` class).
  */
-.button--primary {
-
-}
-
 .button--secondary {
 
 }
@@ -81,16 +78,17 @@ $disabled-button-fg: #999 !default;
 
 }
 
-
-
-/**
- * Button sizes
- */
-.button--large {
+.button--border {
 
 }
 
-.button--medium {
+
+
+/**
+ * Button sizes (`.button--medium` should be the default button size and lives
+ * in the default `.button` class).
+ */
+.button--large {
 
 }
 
