@@ -48,7 +48,7 @@ In all honesty we don’t mind which is used, which is why both can be found in 
 
 ## Grids
 
-Our standard grid system is [CSS Wizardry grids](https://github.com/csswizardry/csswizardry-grids) and is bundled with the project base. Please ensure it is configured correctly and only outputs the grid declarations that are needed for the website.
+Our standard grid system is [CSS Wizardry grids](https://github.com/csswizardry/csswizardry-grids) and is bundled with the project base. Please ensure it is configured correctly and outputs only the grid declarations that are needed for the website.
 
 ## Naming conventions
 
@@ -91,6 +91,12 @@ Put this declaration on its own in `_hacks.scss` (which is ignored by the linter
 ## CSS formatting
 
 ```scss
+// -----------------------------------------------------------------------------
+// FILE TITLE
+//
+// Optional brief description of file contents.
+// -----------------------------------------------------------------------------
+
 /**
  * Use docblock style comments to document rulesets. There is a hard
  * 80-character width limit for comment blocks.
@@ -192,6 +198,11 @@ CSS properties must appear in the order defined in `.scss-lint.yml`. This orderi
 
 Any missing properties (eg browser specific or otherwise rarely used properties) should go at the end of the style declaration in no particular order, and should probably be annotated with a brief explanation. It may also be worth [opening an issue](https://github.com/artworking/base/issues/new) so the property can be added into `.scss-lint.yml` for future projects.
 
-## Shorthand properties
+## CSS guidelines
 
-Avoid the `background` shorthand property which can appear messy. Use the `background-` properties individually instead.
+1. Always use single quotes for quoting strings.
+2. Always quote URLs and font/breakpoint keywords.
+3. Make sure URLs to assets are always relative to the CSS file (eg `../images/logo.png` instead of `/images/logo.png`).
+4. To make elements stack more easily, use only `margin-bottom` for spacing wherever possible and try to avoid `margin-top` (see [Single-direction margin declarations](http://csswizardry.com/2012/06/single-direction-margin-declarations/)).
+5. Use relative `em` units for `line-height` and `margin` on typographical elements.
+6. Avoid the `background` shorthand property which can appear messy. Use the `background-` properties individually instead.
