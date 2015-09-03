@@ -132,7 +132,6 @@ linters:
             - cursor
     QualifyingElement:
         allow_element_with_attribute: true
-        allow_element_with_class: true
     SelectorFormat:
         convention: hyphenated_BEM
     SpaceBeforeBrace:
