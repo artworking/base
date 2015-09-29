@@ -2,7 +2,11 @@
 // ANIMATION
 // -----------------------------------------------------------------------------
 
-@mixin default-transition($properties: all) {
+@mixin default-transition($properties) {
+    @if $properties == 'all' {
+        @error 'Please specify animation properties individually.';
+    }
+
     transition-property: $properties;
     transition-timing-function: $default-transition-timing-function;
     transition-duration: $default-transition-duration;
