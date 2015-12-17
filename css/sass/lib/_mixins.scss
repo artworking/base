@@ -16,7 +16,7 @@
     $rem: ();
 
     @each $value in $values {
-        @if $value == 0 or $value == auto {
+        @if $value == 0 or $value == auto or $value == inherit {
             $px:  append($px, $value);
             $rem: append($rem, $value);
         } @else {
@@ -76,7 +76,7 @@
 /// Retina image mixin (requires Compass)
 @mixin retina-background($filename, $extension: 'png', $dimensions: true) {
 
-    @if not mixin-exists(image-width) {
+    @if not function-exists(image-width) {
         @error "The `retina-background` mixin requires Compass.";
     }
 
